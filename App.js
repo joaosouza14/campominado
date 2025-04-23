@@ -1,11 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import params from "./src/params";
+import Campo from "./src/components/Campo";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.welcome}>Iniciando o Campo Minado!</Text>
+      <Text style={styles.instrucoes}>
+        Tamanho da grade:
+        {params.getColumnsAmount()}x{params.getRowsAmount()}
+      </Text>
+      <Campo />
+      <Campo aberto />
+      <Campo aberto minasPerto={6} />
+      <Campo minado aberto />
+      <Campo minado aberto explodida />
+      <Campo comBandeira />
+      <Campo comBandeira aberto />
     </View>
   );
 }
@@ -13,8 +25,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: "center",
   },
 });
