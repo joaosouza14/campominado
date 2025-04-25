@@ -1,54 +1,59 @@
-import React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import params from "../params";
-import Mina from "./Mina";
-import Bandeira from "./Bandeira";
+import React from "react"
+import { View, StyleSheet, Text, TouchableWithoutFeedback } from "react-native"
+import params from "../params"
+import Mina from "./Mina"
+import Bandeira from "./Bandeira"
 
 export default (props) => {
-  const { minado, aberto, minasPerto, explodida, comBandeira } = props;
+  const { minado, aberto, minasPerto, explodida, marcado } = props
 
-  const styleCampo = [styles.campo];
+  const styleCampo = [styles.campo]
   if (aberto) {
-    styleCampo.push(styles.aberto);
+    styleCampo.push(styles.aberto)
   }
   if (explodida) {
-    styleCampo.push(styles.explodida);
+    styleCampo.push(styles.explodida)
   }
-  if (comBandeira) {
-    styleCampo.push(styles.comBandeira, styles.regular);
+  if (marcado) {
+    styleCampo.push(styles.marcado, styles.regular)
   }
-  if (!aberto && !comBandeira) {
-    styleCampo.push(styles.regular);
+  if (!aberto && !marcado) {
+    styleCampo.push(styles.regular)
   }
 
-  let cor = null;
+  let cor = null
   if (minasPerto > 0) {
     if (minasPerto === 1) {
-      cor = "#2A28D7";
+      cor = "#2A28D7"
     }
     if (minasPerto === 2) {
-      cor = "#2B520F";
+      cor = "#2B520F"
     }
     if (minasPerto > 2 && minasPerto < 6) {
-      cor = "#F9060A";
+      cor = "#F9060A"
     }
     if (minasPerto >= 6) {
-      cor = "#F221A9";
+      cor = "#F221A9"
     }
   }
 
   return (
-    <View style={styleCampo}>
-      {!minado && aberto && minasPerto > 0 ? (
-        <Text style={[styles.label, { color: cor }]}>{minasPerto}</Text>
-      ) : (
-        false
-      )}
-      {minado && aberto ? <Mina /> : false}
-      {comBandeira && !aberto ? <Bandeira /> : false}
-    </View>
-  );
-};
+    <TouchableWithoutFeedback
+      onPress={props.onOpen}
+      onLongPress={props.onMarcar}
+    >
+      <View style={styleCampo}>
+        {!minado && aberto && minasPerto > 0 ? (
+          <Text style={[styles.label, { color: cor }]}>{minasPerto}</Text>
+        ) : (
+          false
+        )}
+        {minado && aberto ? <Mina /> : false}
+        {marcado && !aberto ? <Bandeira /> : false}
+      </View>
+    </TouchableWithoutFeedback>
+  )
+}
 
 const styles = StyleSheet.create({
   campo: {
@@ -77,4 +82,4 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     borderColor: "red",
   },
-});
+})
