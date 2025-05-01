@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "#EEE",
+    backgroundColor: "#f4c28a",
     alignItems: "center",
     justifyContent: "space-around",
     paddingTop: 20,
@@ -46,13 +46,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingLeft: 20,
     paddingTop: 5,
+    color: "#000",
   },
   botao: {
-    backgroundColor: "#999",
+    backgroundColor: "#4b4230",
     padding: 5,
+    borderRadius: 10,
   },
   txtBotao: {
-    color: "#DDD",
+    color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
   },

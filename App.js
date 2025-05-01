@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
   },
   tabuleiro: {
     alignItems: "center",
-    backgroundColor: "#AAA",
+    backgroundColor: "#f4c28a",
   },
 })

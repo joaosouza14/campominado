@@ -44,10 +44,11 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.6)",
   },
   container: {
-    backgroundColor: "#EEE",
+    backgroundColor: "#f4c28a",
     alignItems: "center",
     justifyContent: "center",
     padding: 15,
+    borderRadius: 10,
   },
   title: {
     fontSize: 30,
@@ -56,11 +57,14 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10,
     padding: 5,
+    width: 100,
+    borderRadius: 10,
   },
   buttonLabel: {
     fontSize: 20,
     color: "#EEE",
     fontWeight: "bold",
+    textAlign: "center",
   },
   bgEasy: {
     backgroundColor: "#49b65d",
@@ -69,6 +73,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#2765F7",
   },
   bgHard: {
-    backgroundColor: "#F26337",
+    backgroundColor: "#940404",
   },
 })

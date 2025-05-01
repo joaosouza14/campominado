@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
+import React from "react"
+import { View, StyleSheet } from "react-native"
 
 export default (props) => {
   return (
@@ -11,8 +11,8 @@ export default (props) => {
       <View style={[styles.base1, props.bigger ? styles.base1Bigger : null]} />
       <View style={[styles.base2, props.bigger ? styles.base2Bigger : null]} />
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     height: 5,
     width: 6,
-    backgroundColor: "#F22",
+    backgroundColor: "red",
     marginLeft: 3,
   },
   base1: {
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     marginTop: 24,
   },
-});
+})
